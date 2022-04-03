@@ -1,0 +1,95 @@
+@import 'scss-tools.scss';
+
+main{
+    article{
+        display: flex;
+        flex-flow: nowrap column;
+        justify-content: center;
+        align-items: space-between;
+        width: 86%;
+        margin:0 auto 20vh;
+
+        position:sticky;
+
+        h2{
+            @include f-styles(400);
+            @include f-size(50, 20);
+            line-height: 59px;
+            text-align: center;
+            margin:0 0 6% 0;
+            padding: 0 0 40px 0;
+
+            span{
+                background: linear-gradient(180deg, #cf036d 2.23%, #3a40e7 69.51%);
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                @media(max-width: 430px){
+                    background: linear-gradient(180deg, #ff188f 2.23%, #860092 69.51%);
+                    background-clip: text;
+                }
+            }
+        }
+
+        .article__content{
+            display: flex;
+            flex-flow: nowrap row;
+            justify-content: space-between;
+
+            .article__content_item{
+                width: 344px;
+                height: 47vh;
+                border-radius: 5%;
+                box-shadow: 0px 0px 40px 0px rgba(184, 0, 95, 0.2);
+
+                img{
+                    height: 50%;
+                    width: 100%;
+                    border-radius: 9px 9px 0 0;
+                    object-fit: cover;
+                }
+
+                .info{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: space-evenly;
+                    width: 90%;
+                    height: 50%;
+                    margin:0 auto;
+                    p{
+                        text-transform: uppercase;
+                        @include f-styles(700);
+                        @include f-size(36, 30);
+                        line-height: 35px;
+                        margin:0;
+                    }
+                    span{
+                        @include f-styles(300, #a5a5a5);
+                        font-size: 14px;
+                        line-height: 16px;
+                    }
+                }
+
+                @media(max-width:400px){
+                    height: 60vh;
+                }
+            }
+
+            @media(max-width:1300px){
+                flex-flow:column;
+                align-items: center;
+
+                .article__content_item{
+                    width: 90%;
+                    margin-bottom:13%;
+                    border-radius:0 0 9px 9px;
+                    .info{
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: space-evenly;
+                        width: 85%;
+                    }
+                }
+            }
+        }
+    }
+}
